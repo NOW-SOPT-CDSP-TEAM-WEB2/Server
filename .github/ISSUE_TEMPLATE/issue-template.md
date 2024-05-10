@@ -1,6 +1,6 @@
 ---
-name: Custom issue template
-about: Describe this issue template's purpose here.
+name: issue template
+about: 합동세미나 이슈템플릿입니다
 title: ''
 labels: ''
 assignees: ''
