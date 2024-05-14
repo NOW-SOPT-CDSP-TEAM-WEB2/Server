@@ -1,4 +1,4 @@
-package com.hapjuhasil.server.domain;
+package org.sopt.practice.domain;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;

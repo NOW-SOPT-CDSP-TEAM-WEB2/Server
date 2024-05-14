@@ -1,10 +1,9 @@
-package com.hapjuhasil.server.common;
+package org.sopt.practice.common;
 
-
-import com.hapjuhasil.server.common.dto.ErrorMessage;
-import com.hapjuhasil.server.common.dto.ErrorResponse;
-import com.hapjuhasil.server.exception.CustomizedException;
-import com.hapjuhasil.server.exception.NotFoundException;
+import org.sopt.practice.common.dto.ErrorMessage;
+import org.sopt.practice.common.dto.ErrorResponse;
+import org.sopt.practice.exception.CustomizedException;
+import org.sopt.practice.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

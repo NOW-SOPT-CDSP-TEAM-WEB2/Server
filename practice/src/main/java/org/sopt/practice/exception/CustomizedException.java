@@ -1,6 +1,6 @@
-package com.hapjuhasil.server.exception;
+package org.sopt.practice.exception;
 
-import com.hapjuhasil.server.common.dto.ErrorMessage;
+import org.sopt.practice.common.dto.ErrorMessage;
 
 public class CustomizedException extends BusinessException {
     public CustomizedException(ErrorMessage errorMessage) {

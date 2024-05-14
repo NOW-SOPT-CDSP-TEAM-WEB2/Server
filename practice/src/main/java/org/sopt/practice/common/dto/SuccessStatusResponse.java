@@ -1,4 +1,4 @@
-package com.hapjuhasil.server.common.dto;
+package org.sopt.practice.common.dto;
 
 public record SuccessStatusResponse(
         int status, String message,  Object data
