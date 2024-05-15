@@ -1,6 +1,7 @@
-package org.sopt.practice.exception;
+package com.sopt.airbnb.exception;
 
-import org.sopt.practice.common.dto.ErrorMessage;
+
+import com.sopt.airbnb.common.dto.ErrorMessage;
 
 public class CustomizedException extends BusinessException {
     public CustomizedException(ErrorMessage errorMessage) {

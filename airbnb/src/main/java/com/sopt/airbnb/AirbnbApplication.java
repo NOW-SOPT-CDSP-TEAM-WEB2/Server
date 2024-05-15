@@ -1,13 +1,13 @@
-package org.sopt.practice;
+package com.sopt.airbnb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PracticeApplication {
+public class AirbnbApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PracticeApplication.class, args);
+		SpringApplication.run(AirbnbApplication.class, args);
 	}
 
 }

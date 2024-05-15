@@ -1,4 +1,4 @@
-package org.sopt.practice.common.dto;
+package com.sopt.airbnb.common.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 @Getter
 @AllArgsConstructor
 public enum SuccessMessage {
-    UPDATE_SUCCESS(HttpStatus.OK.value(), "정보 업데이트가 완료되었습니다."),
+    POST_SUCCESS(HttpStatus.CREATED.value(), "등록이 완료되었습니다."),
     ;
     private final int status;
     private final String message;

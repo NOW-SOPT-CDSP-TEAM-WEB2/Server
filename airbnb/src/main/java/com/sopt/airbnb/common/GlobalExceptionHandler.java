@@ -1,9 +1,10 @@
-package org.sopt.practice.common;
+package com.sopt.airbnb.common;
 
-import org.sopt.practice.common.dto.ErrorMessage;
-import org.sopt.practice.common.dto.ErrorResponse;
-import org.sopt.practice.exception.CustomizedException;
-import org.sopt.practice.exception.NotFoundException;
+
+import com.sopt.airbnb.common.dto.ErrorMessage;
+import com.sopt.airbnb.common.dto.ErrorResponse;
+import com.sopt.airbnb.exception.CustomizedException;
+import com.sopt.airbnb.exception.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;

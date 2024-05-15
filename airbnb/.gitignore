@@ -3,7 +3,6 @@ HELP.md
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
-**/src/main/resources/application.yml
 !**/src/test/**/build/
 
 ### STS ###
@@ -17,8 +16,6 @@ build/
 bin/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
-
-
 
 ### IntelliJ IDEA ###
 .idea
@@ -38,6 +35,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-.DS_Store
-

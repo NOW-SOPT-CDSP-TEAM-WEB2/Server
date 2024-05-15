@@ -1,4 +1,4 @@
-package org.sopt.practice.common.dto;
+package com.sopt.airbnb.common.dto;
 
 public record SuccessStatusResponse(
         int status, String message,  Object data

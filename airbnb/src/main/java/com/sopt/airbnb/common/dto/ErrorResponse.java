@@ -1,4 +1,4 @@
-package org.sopt.practice.common.dto;
+package com.sopt.airbnb.common.dto;
 
 public record ErrorResponse(
         int status,

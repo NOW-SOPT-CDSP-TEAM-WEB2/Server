@@ -1,7 +1,6 @@
-package org.sopt.practice.exception;
+package com.sopt.airbnb.exception;
 
-
-import org.sopt.practice.common.dto.ErrorMessage;
+import com.sopt.airbnb.common.dto.ErrorMessage;
 
 public class NotFoundException extends BusinessException {
     public NotFoundException(ErrorMessage errorMessage) {
