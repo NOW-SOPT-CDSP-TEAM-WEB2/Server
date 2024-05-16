@@ -8,10 +8,7 @@ import com.sopt.airbnb.service.WishService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -23,7 +20,13 @@ public class WishController {
     @PostMapping("/wishes/{roomId}")
     public ResponseEntity<SuccessResponse> addToWishlist(@PathVariable Long roomId) {
         wishService.updateWishListStatus(roomId, true);
-        return ResponseEntity.ok(SuccessResponse.of(SuccessMessage.WISH_SUCCESS));
+        return ResponseEntity.ok(SuccessResponse.of(SuccessMessage.WISH_POST_SUCCESS));
+    }
+
+    @DeleteMapping("/wishes/{roomId}")
+    public ResponseEntity<SuccessResponse> deleteToWishlist(@PathVariable Long roomId) {
+        wishService.updateWishListStatus(roomId, false);
+        return ResponseEntity.ok(SuccessResponse.of(SuccessMessage.WISH_DELETE_SUCCESS));
     }
 
 
