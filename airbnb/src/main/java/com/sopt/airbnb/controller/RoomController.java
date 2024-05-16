@@ -1,6 +1,7 @@
 package com.sopt.airbnb.controller;
 
 import com.sopt.airbnb.service.RoomService;
+
 import com.sopt.airbnb.dto.RoomListDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +16,9 @@ public class RoomController {
 
     private final RoomService roomService;
 
+
     @GetMapping("/rooms")
     public ResponseEntity<RoomListDto> getRoomList() {
-
         return ResponseEntity.ok(roomService.findRoomList());
     }
 }
