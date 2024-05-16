@@ -1,4 +1,4 @@
-package com.sopt.airbnb.service.dto;
+package com.sopt.airbnb.dto;
 
 import com.sopt.airbnb.domain.Room;
 import java.util.Collections;
