@@ -93,4 +93,8 @@ public class Room {
                 .isWishList(isWishList)
                 .build();
     }
+
+    public void setIsWishList(Boolean isWishList) {
+        this.isWishList = isWishList;
+    }
 }
