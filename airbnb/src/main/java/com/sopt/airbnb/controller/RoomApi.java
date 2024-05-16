@@ -1,6 +1,5 @@
 package com.sopt.airbnb.controller;
 
-
 import com.sopt.airbnb.dto.RoomListDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
