@@ -9,15 +9,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
-public class RoomController {
+public class RoomController implements RoomApi {
 
     private final RoomService roomService;
 
-
-    @GetMapping("/rooms")
+    @GetMapping
+    @Override
     public ResponseEntity<RoomListDto> getRoomList() {
         return ResponseEntity.ok(roomService.findRoomList());
     }
