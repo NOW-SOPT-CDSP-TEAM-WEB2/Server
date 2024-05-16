@@ -1,7 +1,7 @@
 package com.sopt.airbnb.service;
 
 import com.sopt.airbnb.repository.RoomRepository;
-import com.sopt.airbnb.service.dto.RoomListDto;
+import com.sopt.airbnb.dto.RoomListDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
