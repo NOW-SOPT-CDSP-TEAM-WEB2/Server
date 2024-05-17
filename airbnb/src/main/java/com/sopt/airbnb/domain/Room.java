@@ -47,6 +47,12 @@ public class Room {
     @Column(name = "iswishlist", nullable = false)
     private Boolean isWishList;
 
+    @Column(name = "latitude", nullable = false)
+    private BigDecimal latitude;
+
+    @Column(name = "longitude", nullable = false)
+    private BigDecimal longitude;
+
     @Builder
     public Room(
             String roomImage,
@@ -57,7 +63,9 @@ public class Room {
             String guestReview,
             String roomPrice,
             Boolean isSuperHost,
-            Boolean isWishList
+            Boolean isWishList,
+            BigDecimal latitude,
+            BigDecimal longitude
     ) {
         this.roomImage = roomImage;
         this.roomLocation = roomLocation;
@@ -68,6 +76,8 @@ public class Room {
         this.roomPrice = roomPrice;
         this.isSuperHost = isSuperHost;
         this.isWishList = isWishList;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public static Room create(
@@ -79,7 +89,9 @@ public class Room {
             String guestReview,
             String roomPrice,
             Boolean isSuperHost,
-            Boolean isWishList
+            Boolean isWishList,
+            BigDecimal latitude,
+            BigDecimal longitude
     ) {
         return Room.builder()
                 .roomImage(roomImage)
@@ -91,6 +103,8 @@ public class Room {
                 .roomPrice(roomPrice)
                 .isSuperHost(isSuperHost)
                 .isWishList(isWishList)
+                .latitude(latitude)
+                .longitude(longitude)
                 .build();
     }
 

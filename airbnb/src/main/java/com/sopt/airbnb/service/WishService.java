@@ -7,6 +7,8 @@ import com.sopt.airbnb.repository.RoomRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class WishService {
@@ -19,4 +21,7 @@ public class WishService {
         roomRepository.save(room);
     }
 
+    public List<Room> getWishlist() {
+        return roomRepository.findByIsWishListTrue();
+    }
 }
