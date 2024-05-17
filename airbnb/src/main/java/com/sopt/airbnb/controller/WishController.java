@@ -17,22 +17,25 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1")
-public class WishController {
+public class WishController implements WishApi{
 
     private final WishService wishService;
 
+    @Override
     @PostMapping("/wishes/{roomId}")
     public ResponseEntity<SuccessResponse> addToWishlist(@PathVariable Long roomId) {
         wishService.updateWishListStatus(roomId, true);
         return ResponseEntity.ok(SuccessResponse.of(SuccessMessage.WISH_POST_SUCCESS));
     }
 
+    @Override
     @DeleteMapping("/wishes/{roomId}")
     public ResponseEntity<SuccessResponse> deleteToWishlist(@PathVariable Long roomId) {
         wishService.updateWishListStatus(roomId, false);
         return ResponseEntity.ok(SuccessResponse.of(SuccessMessage.WISH_DELETE_SUCCESS));
     }
 
+    @Override
     @GetMapping("/wishes")
     public ResponseEntity<SuccessStatusResponse> getWishlist() {
         List<Room> wishlist = wishService.getWishlist();
