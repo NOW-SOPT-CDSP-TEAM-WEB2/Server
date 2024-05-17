@@ -32,13 +32,7 @@ public interface WishApi {
             responses = {
                     @ApiResponse(
                             responseCode = "200",
-                            description = "위시 리스트에 성공적으로 취소되었습니다.",
-                            content = @Content(
-                                    mediaType = MediaType.APPLICATION_JSON_VALUE,
-                                    schema = @Schema(
-                                            implementation = RoomListDto.class
-                                    )
-                            )
+                            description = "위시가 성공적으로 삭제되었습니다."
                     )
             }
     )
