@@ -2,7 +2,7 @@ package com.sopt.airbnb.controller;
 
 import com.sopt.airbnb.common.dto.SuccessResponse;
 import com.sopt.airbnb.common.dto.SuccessStatusResponse;
-import com.sopt.airbnb.dto.RoomListDto;
+import com.sopt.airbnb.dto.WishListResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -48,7 +48,7 @@ public interface WishApi {
                             content = @Content(
                                     mediaType = MediaType.APPLICATION_JSON_VALUE,
                                     schema = @Schema(
-                                            implementation = RoomListDto.class
+                                            implementation = WishListResponse.class
                                     )
                             )
                     )

@@ -5,19 +5,22 @@ import com.sopt.airbnb.common.dto.SuccessMessage;
 import com.sopt.airbnb.common.dto.SuccessResponse;
 import com.sopt.airbnb.common.dto.SuccessStatusResponse;
 import com.sopt.airbnb.domain.Room;
-import com.sopt.airbnb.dto.RoomListDto;
+import com.sopt.airbnb.dto.WishListResponse;
 import com.sopt.airbnb.service.WishService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1")
-public class WishController implements WishApi{
+public class WishController implements WishApi {
 
     private final WishService wishService;
 
@@ -39,12 +42,11 @@ public class WishController implements WishApi{
     @GetMapping("/wishes")
     public ResponseEntity<SuccessStatusResponse> getWishlist() {
         List<Room> wishlist = wishService.getWishlist();
-        RoomListDto roomListDto = RoomListDto.create(wishlist);
+        WishListResponse wishListResponse = WishListResponse.create(wishlist);
         return ResponseEntity.ok(SuccessStatusResponse.of(
                 SuccessMessage.WISHLIST_GET_SUCCESS.getStatus(),
                 SuccessMessage.WISHLIST_GET_SUCCESS.getMessage(),
-                roomListDto));
+                wishListResponse));
     }
-
 
 }

@@ -1,11 +1,17 @@
 package com.sopt.airbnb.domain;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import java.math.BigDecimal;
+import java.util.List;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,8 +26,10 @@ public class Room {
     @Column(name = "roomid")
     private Long roomId;
 
-    @Column(name = "roomimage", nullable = false, length = 200)
-    private String roomImage;
+    @ElementCollection
+    @CollectionTable(name = "roomimages", joinColumns = @JoinColumn(name = "roomid"))
+    @Column(name = "roomimage", nullable = false)
+    private List<String> roomImageList;
 
     @Column(name = "roomlocation", nullable = false, length = 50)
     private String roomLocation;
@@ -53,9 +61,12 @@ public class Room {
     @Column(name = "longitude", nullable = false)
     private BigDecimal longitude;
 
+    @OneToOne(mappedBy = "room", cascade = CascadeType.ALL, optional = false)
+    private RoomDetail roomDetail;
+
     @Builder
     public Room(
-            String roomImage,
+            List<String> roomImageList,
             String roomLocation,
             BigDecimal roomRating,
             String currentDistance,
@@ -67,7 +78,7 @@ public class Room {
             BigDecimal latitude,
             BigDecimal longitude
     ) {
-        this.roomImage = roomImage;
+        this.roomImageList = roomImageList;
         this.roomLocation = roomLocation;
         this.roomRating = roomRating;
         this.currentDistance = currentDistance;
@@ -81,7 +92,7 @@ public class Room {
     }
 
     public static Room create(
-            String roomImage,
+            List<String> roomImageList,
             String roomLocation,
             BigDecimal roomRating,
             String currentDistance,
@@ -94,7 +105,7 @@ public class Room {
             BigDecimal longitude
     ) {
         return Room.builder()
-                .roomImage(roomImage)
+                .roomImageList(roomImageList)
                 .roomLocation(roomLocation)
                 .roomRating(roomRating)
                 .currentDistance(currentDistance)
