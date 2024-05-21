@@ -1,10 +1,13 @@
 package com.sopt.airbnb.controller;
 
-import com.sopt.airbnb.dto.RoomListDto;
+import com.sopt.airbnb.dto.RoomDetailResponse;
+import com.sopt.airbnb.dto.RoomResponse;
 import com.sopt.airbnb.service.RoomService;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +20,15 @@ public class RoomController implements RoomApi {
 
     @GetMapping
     @Override
-    public ResponseEntity<RoomListDto> getRoomList() {
+    public ResponseEntity<List<RoomResponse>> getRoomList() {
         return ResponseEntity.ok(roomService.findRoomList());
+    }
+
+    @GetMapping("{roomId}")
+    @Override
+    public ResponseEntity<RoomDetailResponse> getRoomDetail(
+            @PathVariable Long roomId
+    ) {
+        return ResponseEntity.ok(roomService.findRoomDetailByRoomId(roomId));
     }
 }
