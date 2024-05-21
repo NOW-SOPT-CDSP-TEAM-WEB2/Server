@@ -11,7 +11,7 @@ public record RoomDetailResponse(
         String roomLocation,
         BigDecimal roomRating,
         Boolean isSuperHost,
-        String roomPrice,
+        int roomPrice,
         BigDecimal latitude,
         BigDecimal longitude,
         RoomDetailInfo roomDetail

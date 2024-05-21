@@ -15,7 +15,7 @@ public record RoomResponse(
         String currentDistance,
         String recommendedDates,
         String guestReview,
-        String roomPrice,
+        int roomPrice,
         Boolean isSuperHost,
         Boolean isWishList
 ) {
