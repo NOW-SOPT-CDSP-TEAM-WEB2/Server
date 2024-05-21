@@ -31,23 +31,23 @@ public class Room {
     @Column(name = "roomimage", nullable = false)
     private List<String> roomImageList;
 
-    @Column(name = "roomlocation", nullable = false, length = 50)
+    @Column(name = "roomlocation", nullable = false, length = 64)
     private String roomLocation;
 
     @Column(name = "roomrating", nullable = false, precision = 3, scale = 2)
     private BigDecimal roomRating;
 
-    @Column(name = "currentdistance", nullable = false, length = 50)
+    @Column(name = "currentdistance", nullable = false, length = 32)
     private String currentDistance;
 
-    @Column(name = "recommendeddates", nullable = false, length = 30)
+    @Column(name = "recommendeddates", nullable = false, length = 32)
     private String recommendedDates;
 
-    @Column(name = "guestreview", nullable = false, length = 30)
+    @Column(name = "guestreview", nullable = false, length = 16)
     private String guestReview;
 
-    @Column(name = "roomprice", nullable = false, length = 30)
-    private String roomPrice;
+    @Column(name = "roomprice", nullable = false)
+    private int roomPrice;
 
     @Column(name = "issuperhost", nullable = false)
     private Boolean isSuperHost;
@@ -72,7 +72,7 @@ public class Room {
             String currentDistance,
             String recommendedDates,
             String guestReview,
-            String roomPrice,
+            int roomPrice,
             Boolean isSuperHost,
             Boolean isWishList,
             BigDecimal latitude,
@@ -98,7 +98,7 @@ public class Room {
             String currentDistance,
             String recommendedDates,
             String guestReview,
-            String roomPrice,
+            int roomPrice,
             Boolean isSuperHost,
             Boolean isWishList,
             BigDecimal latitude,

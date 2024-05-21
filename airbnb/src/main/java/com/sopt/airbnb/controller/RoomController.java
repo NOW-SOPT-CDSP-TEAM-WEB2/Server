@@ -1,5 +1,7 @@
 package com.sopt.airbnb.controller;
 
+import com.sopt.airbnb.common.dto.SuccessResponse;
+import com.sopt.airbnb.dto.RoomBookingRequest;
 import com.sopt.airbnb.dto.RoomDetailResponse;
 import com.sopt.airbnb.dto.RoomResponse;
 import com.sopt.airbnb.service.RoomService;
@@ -8,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,5 +33,15 @@ public class RoomController implements RoomApi {
             @PathVariable Long roomId
     ) {
         return ResponseEntity.ok(roomService.findRoomDetailByRoomId(roomId));
+    }
+
+    @PostMapping("{roomId}")
+    @Override
+    public ResponseEntity<SuccessResponse> addRoomBooking(
+            @PathVariable Long roomId,
+            RoomBookingRequest roomBookingRequest
+    ) {
+        SuccessResponse response = roomService.validCheckInOutDate(roomBookingRequest);
+        return ResponseEntity.status(201).body(response);
     }
 }

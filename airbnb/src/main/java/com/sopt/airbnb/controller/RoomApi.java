@@ -1,5 +1,7 @@
 package com.sopt.airbnb.controller;
 
+import com.sopt.airbnb.common.dto.SuccessResponse;
+import com.sopt.airbnb.dto.RoomBookingRequest;
 import com.sopt.airbnb.dto.RoomDetailResponse;
 import com.sopt.airbnb.dto.RoomResponse;
 import io.swagger.v3.oas.annotations.Operation;
@@ -54,5 +56,14 @@ public interface RoomApi {
     )
     public ResponseEntity<RoomDetailResponse> getRoomDetail(
             @PathVariable Long roomId
+    );
+
+    @Operation(
+            summary = "숙소 예약하기 API",
+            description = "숙소를 예약하는 API입니다."
+    )
+    public ResponseEntity<SuccessResponse> addRoomBooking(
+            @PathVariable Long roomId,
+            RoomBookingRequest roomBookingRequest
     );
 }
