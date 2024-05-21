@@ -1,7 +1,7 @@
 package com.sopt.airbnb.controller;
 
 import com.sopt.airbnb.dto.RoomDetailResponse;
-import com.sopt.airbnb.dto.RoomListResponse;
+import com.sopt.airbnb.dto.RoomResponse;
 import com.sopt.airbnb.service.RoomService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +20,7 @@ public class RoomController implements RoomApi {
 
     @GetMapping
     @Override
-    public ResponseEntity<List<RoomListResponse>> getRoomList() {
+    public ResponseEntity<List<RoomResponse>> getRoomList() {
         return ResponseEntity.ok(roomService.findRoomList());
     }
 

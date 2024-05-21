@@ -2,8 +2,9 @@ package com.sopt.airbnb.controller;
 
 import com.sopt.airbnb.common.dto.SuccessResponse;
 import com.sopt.airbnb.common.dto.SuccessStatusResponse;
-import com.sopt.airbnb.dto.WishListResponse;
+import com.sopt.airbnb.dto.WishResponse;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -39,16 +40,18 @@ public interface WishApi {
     public ResponseEntity<SuccessResponse> deleteToWishlist(@PathVariable Long roomId);
 
     @Operation(
-            summary = "위시 리스트 반환 API",
-            description = "위시리스트에 등록된 숙소 정보를 반환하는 API입니다.",
+            summary = "위시 리스트 조회 API",
+            description = "위시 리스트에 등록된 숙소 정보를 조회하는 API입니다.",
             responses = {
                     @ApiResponse(
                             responseCode = "200",
-                            description = "위시 리스트가 성공적으로 반환되었습니다.",
+                            description = "위시 리스트 조회 성공",
                             content = @Content(
                                     mediaType = MediaType.APPLICATION_JSON_VALUE,
-                                    schema = @Schema(
-                                            implementation = WishListResponse.class
+                                    array = @ArraySchema(
+                                            schema = @Schema(
+                                                    implementation = WishResponse.class
+                                            )
                                     )
                             )
                     )

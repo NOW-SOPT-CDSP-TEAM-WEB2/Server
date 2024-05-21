@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import lombok.Builder;
 
 @Builder
-public record RoomListResponse(
+public record RoomResponse(
         Long roomId,
         List<String> roomImageList,
         String roomLocation,
@@ -19,8 +19,8 @@ public record RoomListResponse(
         Boolean isSuperHost,
         Boolean isWishList
 ) {
-    public static RoomListResponse of(Room room) {
-        return RoomListResponse.builder()
+    public static RoomResponse of(Room room) {
+        return RoomResponse.builder()
                 .roomId(room.getRoomId())
                 .roomImageList(room.getRoomImageList())
                 .roomLocation(room.getRoomLocation())
@@ -34,9 +34,9 @@ public record RoomListResponse(
                 .build();
     }
 
-    public static List<RoomListResponse> create(List<Room> originalRooms) {
+    public static List<RoomResponse> create(List<Room> originalRooms) {
         return originalRooms.stream()
-                .map(RoomListResponse::of)
+                .map(RoomResponse::of)
                 .collect(Collectors.toList());
     }
 }

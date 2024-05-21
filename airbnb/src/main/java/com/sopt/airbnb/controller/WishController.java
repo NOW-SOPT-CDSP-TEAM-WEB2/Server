@@ -5,7 +5,7 @@ import com.sopt.airbnb.common.dto.SuccessMessage;
 import com.sopt.airbnb.common.dto.SuccessResponse;
 import com.sopt.airbnb.common.dto.SuccessStatusResponse;
 import com.sopt.airbnb.domain.Room;
-import com.sopt.airbnb.dto.WishListResponse;
+import com.sopt.airbnb.dto.WishResponse;
 import com.sopt.airbnb.service.WishService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -42,7 +42,7 @@ public class WishController implements WishApi {
     @GetMapping("/wishes")
     public ResponseEntity<SuccessStatusResponse> getWishlist() {
         List<Room> wishlist = wishService.getWishlist();
-        WishListResponse wishListResponse = WishListResponse.create(wishlist);
+        List<WishResponse> wishListResponse = WishResponse.create(wishlist);
         return ResponseEntity.ok(SuccessStatusResponse.of(
                 SuccessMessage.WISHLIST_GET_SUCCESS.getStatus(),
                 SuccessMessage.WISHLIST_GET_SUCCESS.getMessage(),
