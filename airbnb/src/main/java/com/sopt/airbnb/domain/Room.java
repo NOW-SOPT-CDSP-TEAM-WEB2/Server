@@ -55,10 +55,10 @@ public class Room {
     @Column(name = "iswishlist", nullable = false)
     private Boolean isWishList;
 
-    @Column(name = "latitude", nullable = false)
+    @Column(name = "latitude", nullable = false, precision = 15, scale = 10)
     private BigDecimal latitude;
 
-    @Column(name = "longitude", nullable = false)
+    @Column(name = "longitude", nullable = false, precision = 15, scale = 10)
     private BigDecimal longitude;
 
     @OneToOne(mappedBy = "room", cascade = CascadeType.ALL, optional = false)
