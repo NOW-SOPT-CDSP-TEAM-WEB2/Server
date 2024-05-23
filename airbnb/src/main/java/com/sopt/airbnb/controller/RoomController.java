@@ -8,11 +8,7 @@ import com.sopt.airbnb.service.RoomService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/rooms")
@@ -40,7 +36,7 @@ public class RoomController implements RoomApi {
     @Override
     public ResponseEntity<SuccessResponse> addRoomBooking(
             @PathVariable Long roomId,
-            RoomBookingRequest roomBookingRequest
+            @RequestBody RoomBookingRequest roomBookingRequest
     ) {
         SuccessResponse response = roomService.validCheckInOutDate(roomBookingRequest);
         return ResponseEntity.status(201).body(response);
