@@ -14,7 +14,7 @@ public record RoomDetailInfo(
 ) {
     public static RoomDetailInfo of(RoomDetail roomDetail) {
         return RoomDetailInfo.builder()
-                .roomId(roomDetail.getRoom().getRoomId())
+                .roomId(roomDetail.getRoom().getId())
                 .roomName(roomDetail.getRoomName())
                 .roomInfo(RoomFacilityInfo.of(roomDetail.getRoomInfo()))
                 .hostName(roomDetail.getHostName())

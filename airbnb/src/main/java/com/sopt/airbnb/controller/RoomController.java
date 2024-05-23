@@ -27,6 +27,7 @@ public class RoomController implements RoomApi {
         return ResponseEntity.ok(roomService.findRoomList());
     }
 
+
     @GetMapping("{roomId}")
     @Override
     public ResponseEntity<RoomDetailResponse> getRoomDetail(

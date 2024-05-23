@@ -21,7 +21,7 @@ public record RoomResponse(
 ) {
     public static RoomResponse of(Room room) {
         return RoomResponse.builder()
-                .roomId(room.getRoomId())
+                .roomId(room.getId())
                 .roomImageList(room.getRoomImageList())
                 .roomLocation(room.getRoomLocation())
                 .roomRating(room.getRoomRating())

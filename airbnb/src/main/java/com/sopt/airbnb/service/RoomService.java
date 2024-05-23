@@ -21,7 +21,7 @@ public class RoomService {
     private final RoomRepository roomRepository;
 
     public List<RoomResponse> findRoomList() {
-        return RoomResponse.create(roomRepository.findAll());
+        return RoomResponse.create(roomRepository.findAllByOrderByIdAsc());
     }
 
     public RoomDetailResponse findRoomDetailByRoomId(

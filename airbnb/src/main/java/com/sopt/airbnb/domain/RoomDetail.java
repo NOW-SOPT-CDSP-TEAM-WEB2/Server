@@ -45,7 +45,7 @@ public class RoomDetail {
     public RoomDetail(Room room, String roomName, RoomInfo roomInfo, String hostName, int yearsOfHosting,
                       String description) {
         this.room = room;
-        this.roomId = room.getRoomId();
+        this.roomId = room.getId();
         this.roomName = roomName;
         this.roomInfo = roomInfo;
         this.hostName = hostName;

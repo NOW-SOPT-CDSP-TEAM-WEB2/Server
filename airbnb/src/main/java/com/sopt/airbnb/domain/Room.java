@@ -24,7 +24,7 @@ public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "roomid")
-    private Long roomId;
+    private Long id;
 
     @ElementCollection
     @CollectionTable(name = "roomimages", joinColumns = @JoinColumn(name = "roomid"))
