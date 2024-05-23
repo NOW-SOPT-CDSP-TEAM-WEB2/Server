@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public record RoomBookingRequest(
         LocalDate checkInDate,
         LocalDate checkOutDate,
-        int headCount,
+        Integer headCount,
         String messageToHost
 ) {
 }
